@@ -8,6 +8,15 @@ public class BeanDefinition {
     private Object bean;
     private Class beanClass;
     private String clssName;
+    private Propertis propertis;
+
+    public Propertis getPropertis() {
+        return propertis;
+    }
+
+    public void setPropertis(Propertis propertis) {
+        this.propertis = propertis;
+    }
 
     public BeanDefinition() {
 

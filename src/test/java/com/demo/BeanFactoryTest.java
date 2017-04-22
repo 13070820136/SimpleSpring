@@ -10,13 +10,16 @@ import org.junit.Test;
 public class BeanFactoryTest {
 
     @Test
-    public void test(){
+    public void test() {
         BeanDefinition beanDefinition = new BeanDefinition();
         beanDefinition.setClssName("com.demo.HelloService");
         //实例化工厂
         BeanFactory beanFactory = new AutowireCapableBeanFactory();
         //注入
-        beanFactory.registerBeanDefinition("helloService",beanDefinition);
+        Propertis propertis = new Propertis();
+        propertis.addProperties(new Property("text", "hello word"));
+        beanDefinition.setPropertis(propertis);
+        beanFactory.registerBeanDefinition("helloService", beanDefinition);
 
         //使用
         HelloService helloService = (HelloService) beanFactory.getBean("helloService");
